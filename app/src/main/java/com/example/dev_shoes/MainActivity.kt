@@ -31,51 +31,27 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.dev_shoes.components.*
+import com.example.dev_shoes.navigation.NavManager
 import com.example.dev_shoes.ui.theme.DevshoesTheme
+import com.example.dev_shoes.views.DetailView
 import com.example.dev_shoes.views.HomeView
 
 
-@ExperimentalMaterial3Api
+
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContent {
-            HomeView()
-/*            DevshoesTheme {
-                Surface(
-                    modifier = Modifier.fillMaxSize(),
-                    color = MaterialTheme.colorScheme.background
-                ) {
-                    Content()
-                }
-            }*/
+            NavManager()
+            //DetailView()
+            //HomeView()
 
         }
     }
 }
 
 
-@Composable
-fun Content() {
-    Column(
-        modifier = Modifier
-            .fillMaxWidth()
-            .wrapContentSize(Alignment.Center),
-        horizontalAlignment = Alignment.CenterHorizontally
 
-    ) {
-        BotonNormal()
-        Space()
-        BotonNormal2()
-        Space()
-        BotonTexto()
-        Space()
-        BotonOutline()
-        Space()
-        BotonIcono()
-    }
-
-}
 
 
 
