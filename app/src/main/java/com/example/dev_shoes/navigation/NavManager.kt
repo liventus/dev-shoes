@@ -8,8 +8,11 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.dev_shoes.views.DetailView
 import com.example.dev_shoes.views.HomeView
+import com.example.dev_shoes.views.ListaDeCompras
 import com.example.dev_shoes.views.LoginView
+import com.example.dev_shoes.views.Materiales
 import com.example.dev_shoes.views.MenuPrincipal
+import com.example.dev_shoes.views.RegistroDeCompras
 
 
 @Composable
@@ -36,6 +39,18 @@ fun NavManager(){
 
         composable("MenuPrincipal"){
             MenuPrincipal(navController)
+        }
+
+        composable("RegistroDeCompras"){
+            RegistroDeCompras(navController)
+        }
+
+        composable("Materiales"){
+            Materiales(navController)
+        }
+
+        composable("ListaDeCompras"){
+            ListaDeCompras(navController)
         }
 
     }

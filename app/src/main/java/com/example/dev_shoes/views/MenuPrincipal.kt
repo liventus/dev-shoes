@@ -63,8 +63,12 @@ fun ContentMenuPrincipalView(navController: NavController) {
         TitleView(name = "REGISTER")
         Spacito()
         Text(text = "VA VER MUCHOS CUADROS")
-        MainButton(name = "Return home", backColor = Color.Blue, color = Color.White) {
-            //navController.popBackStack()
+        MainButton(name = "registro de compras", backColor = Color.Cyan, color = Color.White) {
+            navController.navigate("RegistroDeCompras")
+        }
+        Spacito()
+        MainButton(name = "materiales", backColor = Color.Gray, color = Color.White) {
+            navController.navigate("Materiales")
         }
 
     }

@@ -28,7 +28,7 @@ import com.example.dev_shoes.components.TitleView
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun ListaDeCompras(navController: NavController, id: Int, opcional: String?) {
+fun ListaDeCompras(navController: NavController) {
 
     Scaffold(
         topBar = {
@@ -47,32 +47,24 @@ fun ListaDeCompras(navController: NavController, id: Int, opcional: String?) {
             )
         }
     ) {
-        ContentListaDeComprasView(navController, id, opcional)
+        ContentListaDeComprasView(navController)
     }
 }
 
 @Composable
-fun ContentListaDeComprasView(navController: NavController, id:Int,  opcional: String?){
+fun ContentListaDeComprasView(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        TitleView(name = "REGISTER")
+        TitleView(name = "LISTA DE COMPRAS")
         Spacito()
-        TitleView(name = id.toString())
-        Spacito()
-        if(opcional == ""){
-            Spacer(modifier = Modifier.height(0.dp))
-
-        } else {
-            TitleView(name = opcional.orEmpty())
-            Spacito()
-        }
 
 
-        MainButton(name = "Return home", backColor = Color.Blue, color = Color.White) {
+
+        MainButton(name = "Return home", backColor = Color.DarkGray, color = Color.White) {
             navController.popBackStack()
         }
 
