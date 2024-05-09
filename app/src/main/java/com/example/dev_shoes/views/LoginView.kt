@@ -27,14 +27,14 @@ import com.example.dev_shoes.components.TitleView
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailView(navController: NavController, id: Int, opcional: String?) {
+fun LoginView(navController: NavController) {
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { TitleBar(name = "Detail view") },
+                title = { TitleBar(name = "LOG IN") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color.Red
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
@@ -46,35 +46,25 @@ fun DetailView(navController: NavController, id: Int, opcional: String?) {
             )
         }
     ) {
-        ContentDetailView(navController, id, opcional)
+        ContentLoginView(navController)
     }
 
 
 
 }
 @Composable
-fun ContentDetailView(navController: NavController, id:Int,  opcional: String?){
+fun ContentLoginView(navController: NavController){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        TitleView(name = "REGISTER")
+        TitleView(name = "INICIAR SESION")
         Spacito()
-        TitleView(name = id.toString())
-        Spacito()
-        if(opcional == ""){
-            Spacer(modifier = Modifier.height(0.dp))
 
-        } else {
-            TitleView(name = opcional.orEmpty())
-            Spacito()
-        }
-
-
-        MainButton(name = "Return home", backColor = Color.Blue, color = Color.White) {
-            navController.popBackStack()
+        MainButton(name = "INICIAR SESION", backColor = Color.Red, color = Color.White) {
+            navController.navigate("MenuPrincipal")
         }
 
     }

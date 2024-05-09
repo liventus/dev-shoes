@@ -1,5 +1,6 @@
 package com.example.dev_shoes.views
 
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -27,33 +28,31 @@ import com.example.dev_shoes.components.TitleView
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailView(navController: NavController, id: Int, opcional: String?) {
+fun Materiales(navController: NavController, id: Int, opcional: String?) {
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { TitleBar(name = "Detail view") },
+                title = { TitleBar(name = "Materiales") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = Color.Blue
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
                         navController.popBackStack()
-                        
+
                     }
                 }
 
             )
         }
     ) {
-        ContentDetailView(navController, id, opcional)
+        ContentMaterialesView(navController, id, opcional)
     }
-
-
-
 }
+
 @Composable
-fun ContentDetailView(navController: NavController, id:Int,  opcional: String?){
+fun ContentMaterialesView(navController: NavController, id:Int,  opcional: String?){
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,

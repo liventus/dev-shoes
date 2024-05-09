@@ -1,5 +1,6 @@
 package com.example.dev_shoes.views
 
+
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -10,6 +11,7 @@ import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
+import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.material3.TopAppBarDefaults
 import androidx.compose.runtime.Composable
@@ -27,33 +29,31 @@ import com.example.dev_shoes.components.TitleView
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun DetailView(navController: NavController, id: Int, opcional: String?) {
+fun MenuPrincipal(navController: NavController) {
 
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { TitleBar(name = "Detail view") },
+                title = { TitleBar(name = "Menu Principal") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
                     containerColor = Color.Blue
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
                         navController.popBackStack()
-                        
+
                     }
                 }
 
             )
         }
     ) {
-        ContentDetailView(navController, id, opcional)
+        ContentMenuPrincipalView(navController)
     }
-
-
-
 }
+
 @Composable
-fun ContentDetailView(navController: NavController, id:Int,  opcional: String?){
+fun ContentMenuPrincipalView(navController: NavController) {
     Column(
         modifier = Modifier.fillMaxSize(),
         verticalArrangement = Arrangement.Center,
@@ -62,19 +62,9 @@ fun ContentDetailView(navController: NavController, id:Int,  opcional: String?){
     ) {
         TitleView(name = "REGISTER")
         Spacito()
-        TitleView(name = id.toString())
-        Spacito()
-        if(opcional == ""){
-            Spacer(modifier = Modifier.height(0.dp))
-
-        } else {
-            TitleView(name = opcional.orEmpty())
-            Spacito()
-        }
-
-
+        Text(text = "VA VER MUCHOS CUADROS")
         MainButton(name = "Return home", backColor = Color.Blue, color = Color.White) {
-            navController.popBackStack()
+            //navController.popBackStack()
         }
 
     }

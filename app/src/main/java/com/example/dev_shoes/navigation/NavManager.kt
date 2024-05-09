@@ -8,6 +8,8 @@ import androidx.navigation.compose.rememberNavController
 import androidx.navigation.navArgument
 import com.example.dev_shoes.views.DetailView
 import com.example.dev_shoes.views.HomeView
+import com.example.dev_shoes.views.LoginView
+import com.example.dev_shoes.views.MenuPrincipal
 
 
 @Composable
@@ -27,6 +29,15 @@ fun NavManager(){
             val opcional = it.arguments?.getString("opcional") ?: ""
             DetailView(navController, id, opcional)
         }
+
+        composable("Login"){
+            LoginView(navController)
+        }
+
+        composable("MenuPrincipal"){
+            MenuPrincipal(navController)
+        }
+
     }
 
 }
