@@ -19,6 +19,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.dev_shoes.components.ActionButton
 import com.example.dev_shoes.components.MainButton
 import com.example.dev_shoes.components.MainIconButton
 import com.example.dev_shoes.components.Spacito
@@ -45,6 +46,9 @@ fun ListaDeCompras(navController: NavController) {
                 }
 
             )
+        }, floatingActionButton = {
+            ActionButton()
+
         }
     ) {
         ContentListaDeComprasView(navController)
