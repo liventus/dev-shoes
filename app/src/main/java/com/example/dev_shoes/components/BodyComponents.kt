@@ -19,7 +19,12 @@ fun TitleView(name: String){
 }
 
 @Composable
-fun Spacito(){
+fun SpaceH(){
+    Spacer(modifier = Modifier.height(10.dp))
+}
+
+@Composable
+fun SpaceW(){
     Spacer(modifier = Modifier.height(10.dp))
 }
 

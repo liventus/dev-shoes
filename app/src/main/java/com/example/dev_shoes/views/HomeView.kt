@@ -23,7 +23,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.dev_shoes.R
 import com.example.dev_shoes.components.MainButton
-import com.example.dev_shoes.components.Spacito
+import com.example.dev_shoes.components.SpaceH
 
 
 
@@ -62,8 +62,8 @@ fun ContentHomeView(navController: NavController) {
 
 
             )
-        Spacito()
-        Spacito()
+        SpaceH()
+        SpaceH()
 
        /* TextField(
             value = opcional,

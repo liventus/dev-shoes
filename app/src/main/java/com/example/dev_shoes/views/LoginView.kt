@@ -3,9 +3,7 @@ package com.example.dev_shoes.views
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
-import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
-import androidx.compose.foundation.layout.height
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -18,11 +16,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
-import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.dev_shoes.components.MainButton
 import com.example.dev_shoes.components.MainIconButton
-import com.example.dev_shoes.components.Spacito
+import com.example.dev_shoes.components.SpaceH
 import com.example.dev_shoes.components.TitleBar
 import com.example.dev_shoes.components.TitleView
 
@@ -63,7 +60,7 @@ fun ContentLoginView(navController: NavController){
 
     ) {
         TitleView(name = "INICIAR SESION")
-        Spacito()
+        SpaceH()
 
          TextField(
           value = "opcional",

@@ -20,7 +20,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.dev_shoes.components.MainButton
 import com.example.dev_shoes.components.MainIconButton
-import com.example.dev_shoes.components.Spacito
+import com.example.dev_shoes.components.SpaceH
 import com.example.dev_shoes.components.TitleBar
 import com.example.dev_shoes.components.TitleView
 
@@ -61,15 +61,15 @@ fun ContentDetailView(navController: NavController, id:Int,  opcional: String?){
 
     ) {
         TitleView(name = "REGISTER")
-        Spacito()
+        SpaceH()
         TitleView(name = id.toString())
-        Spacito()
+        SpaceH()
         if(opcional == ""){
             Spacer(modifier = Modifier.height(0.dp))
 
         } else {
             TitleView(name = opcional.orEmpty())
-            Spacito()
+            SpaceH()
         }
 
 
