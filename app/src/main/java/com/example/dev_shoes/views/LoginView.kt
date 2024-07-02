@@ -44,9 +44,9 @@ fun LoginView(navController: NavController) {
     Scaffold(
         topBar = {
             TopAppBar(
-                title = { TitleBar(name = "Login") },
+                title = { TitleBar(name = "login") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Red
+                    containerColor = Color(0xFF131000)
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
@@ -78,7 +78,7 @@ fun ContentLoginView(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        TitleView(name = "INICIAR SESION")
+        TitleView(name = "LOGIN")
         SpaceH()
 
        /* TextField(
@@ -109,7 +109,7 @@ fun ContentLoginView(navController: NavController) {
                 }) {
                     Icon(
                         painter = passwordVector, contentDescription = "Password icon",
-                        tint = if (passwordVisibility.value) Color.Red else Color.Gray
+                        tint = if (passwordVisibility.value) Color(0xFF131000) else Color.Gray
                     )
                 }
             },
@@ -122,7 +122,7 @@ fun ContentLoginView(navController: NavController) {
         )
         SpaceH()
         SpaceH()
-        MainButton(name = "INICIAR SESION", backColor = Color.Red, color = Color.White) {
+        MainButton(name = "INICIAR SESION", backColor = Color(0xFF131000), color = Color.White) {
             navController.navigate("MenuPrincipal")
         }
 
