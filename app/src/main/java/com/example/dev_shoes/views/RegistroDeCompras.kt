@@ -32,7 +32,7 @@ fun RegistroDeCompras(navController: NavController) {
             TopAppBar(
                 title = { TitleBar(name = "Registro de compras") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color(0xFF131000)
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {

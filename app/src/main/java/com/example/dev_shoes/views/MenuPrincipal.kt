@@ -33,7 +33,7 @@ fun MenuPrincipal(navController: NavController) {
             TopAppBar(
                 title = { TitleBar(name = "Menu Principal") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color(0xFF131000)
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
@@ -57,14 +57,16 @@ fun ContentMenuPrincipalView(navController: NavController) {
         horizontalAlignment = Alignment.CenterHorizontally
 
     ) {
-        TitleView(name = "REGISTER")
-        SpaceH()
-        Text(text = "VA VER MUCHOS CUADROS")
-        MainButton(name = "registro de compras", backColor = Color.Cyan, color = Color.White) {
+
+
+        MainButton(name = "Compras", backColor = Color(0xFF131000), color = Color.White) {
             navController.navigate("RegistroDeCompras")
         }
         SpaceH()
-        MainButton(name = "materiales", backColor = Color.Gray, color = Color.White) {
+        SpaceH()
+        SpaceH()
+
+        MainButton(name = "materiales", backColor = Color(0xFF131000), color = Color.White) {
             navController.navigate("Materiales")
         }
 

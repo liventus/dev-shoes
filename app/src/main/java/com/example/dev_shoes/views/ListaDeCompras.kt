@@ -33,7 +33,7 @@ fun ListaDeCompras(navController: NavController) {
             TopAppBar(
                 title = { TitleBar(name = "Lista de compras") },
                 colors = TopAppBarDefaults.mediumTopAppBarColors(
-                    containerColor = Color.Blue
+                    containerColor = Color(0xFF131000)
                 ),
                 navigationIcon = {
                     MainIconButton(icon = Icons.Default.ArrowBack) {
