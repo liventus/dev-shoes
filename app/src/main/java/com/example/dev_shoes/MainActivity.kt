@@ -13,7 +13,6 @@ class MainActivity : ComponentActivity() {
 
         setContent {
             NavManager() //ultimo que toy desarrollando
-
         }
     }
 }

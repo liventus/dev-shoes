@@ -1,6 +1,9 @@
 plugins {
     alias(libs.plugins.androidApplication)
     alias(libs.plugins.jetbrainsKotlinAndroid)
+
+
+
 }
 
 android {
@@ -60,6 +63,9 @@ dependencies {
     implementation(libs.androidx.navigation.compose)
     implementation(libs.volley)
     implementation(libs.androidx.compose.material)
+    implementation(libs.firebase.crashlytics.buildtools)
+
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)

@@ -22,6 +22,8 @@ fun NavManager(){
     NavHost(navController = navController, startDestination = "Home") {
         composable("Home"){
             HomeView(navController)
+            //
+            //Materiales(navController)
         }
 
         composable("Detail/{id}/?{opcional}", arguments = listOf(
