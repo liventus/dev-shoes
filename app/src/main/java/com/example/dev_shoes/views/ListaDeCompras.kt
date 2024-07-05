@@ -35,18 +35,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.font.FontWeight
-import androidx.compose.ui.tooling.data.R
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.dev_shoes.assets.generateListaDeCompraItems
-import com.example.dev_shoes.assets.generateMaterialItems
 import com.example.dev_shoes.components.ActionButton
-import com.example.dev_shoes.components.MainButton
 import com.example.dev_shoes.components.MainIconButton
-import com.example.dev_shoes.components.SpaceH
 import com.example.dev_shoes.components.TitleBar
-import com.example.dev_shoes.components.TitleView
-import com.example.dev_shoes.model.dto.RegistroDeComprasDTO
 import com.example.dev_shoes.model.dto.listaDeComprasDTO
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
