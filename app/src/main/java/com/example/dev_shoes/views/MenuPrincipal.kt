@@ -3,8 +3,12 @@ package com.example.dev_shoes.views
 
 import android.annotation.SuppressLint
 import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -16,10 +20,13 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
+import com.example.dev_shoes.components.ButtonMenuCustomizeHeight
 import com.example.dev_shoes.components.MainButton
 import com.example.dev_shoes.components.MainIconButton
 import com.example.dev_shoes.components.SpaceH
+import com.example.dev_shoes.components.SpaceW
 import com.example.dev_shoes.components.TitleBar
 import com.example.dev_shoes.components.TitleView
 
@@ -51,22 +58,34 @@ fun MenuPrincipal(navController: NavController) {
 
 @Composable
 fun ContentMenuPrincipalView(navController: NavController) {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Center,
-        horizontalAlignment = Alignment.CenterHorizontally
+    Row(
+        //line for center horizontal
+        horizontalArrangement = Arrangement.Center,
+        modifier = Modifier
+            .padding(vertical = 70.dp, horizontal = 5.dp)
+            .fillMaxSize()
 
     ) {
-
-
-        MainButton(name = "Compras", backColor = Color(0xFF131000), color = Color.White) {
+        ButtonMenuCustomizeHeight(
+            name = "Compras",
+            backColor = Color(0xFF131000),
+            color = Color.White,
+            modifier = Modifier
+                .height(200.dp)
+                .weight(1f)
+        ) {
             navController.navigate("RegistroDeCompras")
         }
-        SpaceH()
-        SpaceH()
-        SpaceH()
+        SpaceW()
 
-        MainButton(name = "materiales", backColor = Color(0xFF131000), color = Color.White) {
+        ButtonMenuCustomizeHeight(
+            name = "materiales",
+            backColor = Color(0xFF131000),
+            color = Color.White,
+            modifier = Modifier
+                .height(150.dp)
+                .weight(1f)
+        ) {
             navController.navigate("Materiales")
         }
 

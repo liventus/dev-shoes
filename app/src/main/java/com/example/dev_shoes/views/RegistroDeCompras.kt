@@ -49,6 +49,7 @@ import com.example.dev_shoes.components.TitleBar
 import com.example.dev_shoes.components.TitleView
 import com.example.dev_shoes.model.dto.RegistroDeComprasDTO
 import androidx.compose.runtime.*
+import com.example.dev_shoes.components.MainButtonMin
 
 @SuppressLint("UnusedMaterial3ScaffoldPaddingParameter")
 @OptIn(ExperimentalMaterial3Api::class)
@@ -143,22 +144,13 @@ private fun CardContent(item: RegistroDeComprasDTO,navController: NavController)
                 Text(text = item.description)
                 SpaceH()
 
-                MainButton(name = "ver lista ->", backColor = Color.Blue, color = Color.White) {
-                    navController.navigate("ListaDeCompras")
-                }
+
             }
         }
 
-        IconButton(onClick = { expanded = !expanded }) {
-            Icon(
-                imageVector = if (expanded) Icons.Filled.KeyboardArrowUp else Icons.Filled.ArrowDropDown,
-                contentDescription =
-                if (expanded) {
-                    "show less"
-                } else {
-                    "show more"
-                }
-            )
+        MainButtonMin(name = "->", backColor = Color.Blue, color = Color.White) {
+
+            navController.navigate("ListaDeCompras")
         }
     }
 }

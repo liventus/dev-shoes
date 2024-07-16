@@ -3,7 +3,10 @@ package com.example.dev_shoes.components
 
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
+import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExtendedFloatingActionButton
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
@@ -25,7 +28,7 @@ fun SpaceH(){
 
 @Composable
 fun SpaceW(){
-    Spacer(modifier = Modifier.height(10.dp))
+    Spacer(modifier = Modifier.width(10.dp))
 }
 
 @Composable
@@ -36,13 +39,40 @@ fun MainButton(name: String, backColor: Color, color: Color, onClick:()->Unit){
             modifier = Modifier.width(165.dp),
             contentColor = color,
             containerColor = backColor,
-
             shape = androidx.compose.foundation.shape.RoundedCornerShape(8.dp),
+    ) {
+        Text(text= name)
+    }
+}
 
+@Composable
+fun ButtonMenuCustomizeHeight(
+    name: String,
+    backColor: Color,
+    color: Color,
+    modifier: Modifier = Modifier,
+    onClick: () -> Unit
+) {
+    ExtendedFloatingActionButton(
+        onClick = onClick,
+        modifier = modifier,
+        contentColor = color,
+        containerColor = backColor,
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(8.dp),
+    ) {
+        Text(text = name)
+    }
+}
 
+@Composable
+fun MainButtonMin(name: String, backColor: Color, color: Color, onClick:()->Unit){
 
-
-
+    ExtendedFloatingActionButton(
+        onClick = onClick,
+        modifier = Modifier.width(65.dp).padding(top =15.dp),
+        contentColor = color,
+        containerColor = backColor,
+        shape = androidx.compose.foundation.shape.RoundedCornerShape(8.dp),
     ) {
         Text(text= name)
     }

@@ -3,6 +3,8 @@ package com.example.dev_shoes.components
 import android.graphics.drawable.Icon
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Add
+import androidx.compose.material3.AlertDialog
+import androidx.compose.material3.Button
 import androidx.compose.material3.FloatingActionButton
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -20,8 +22,8 @@ fun TitleBar(name: String){
 }
 
 @Composable
-fun ActionButton(){
-    FloatingActionButton(onClick = { /*TODO*/ },
+fun ActionButton(onClick: () -> Unit){
+    FloatingActionButton(onClick = onClick,
         containerColor = Color.Red,
         contentColor = Color.White
 
@@ -45,4 +47,22 @@ fun MainIconButton(icon: ImageVector, onClick:() -> Unit){
     }
 
 
+}
+
+@Composable
+fun ExampleDialog(onDismiss: () -> Unit) {
+    AlertDialog(
+        onDismissRequest = onDismiss,
+        confirmButton = {
+            Button(onClick = onDismiss) {
+                Text("Cerrar")
+            }
+        },
+        title = {
+            Text(text = "agregar material")
+        },
+        text = {
+            Text("desplegable de nombres de materiales")
+        }
+    )
 }

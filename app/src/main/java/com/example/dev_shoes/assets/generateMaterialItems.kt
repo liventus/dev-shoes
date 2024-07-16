@@ -14,9 +14,9 @@ fun generateMaterialItems(): List<MaterialItem> {
 
 fun generateRegistroItems(): List<RegistroDeComprasDTO> {
     return listOf(
-        RegistroDeComprasDTO(1111, "2024/02/03", "Caqueta compra para modelo botin"),
-        RegistroDeComprasDTO(2222, "2024/01/03", "Caqueta compra para modelo botin"),
-        RegistroDeComprasDTO(3333, "2023/02/03", "Caqueta compra para modelo botin ")
+        RegistroDeComprasDTO(3333, "08 de marzo", "Caqueta compra para modelo botin"),
+        RegistroDeComprasDTO(2222, "05 de marzo", "Caqueta compra para modelo botin"),
+        RegistroDeComprasDTO(1111, "08 de enero", "Caqueta compra para modelo botin ")
     )
 }
 

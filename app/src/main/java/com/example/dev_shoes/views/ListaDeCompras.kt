@@ -14,8 +14,10 @@ import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.ArrowBack
+import androidx.compose.material.icons.filled.ArrowDropDown
 import androidx.compose.material.icons.filled.Edit
 import androidx.compose.material.icons.filled.Home
+import androidx.compose.material.icons.filled.KeyboardArrowUp
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -39,6 +41,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import com.example.dev_shoes.assets.generateListaDeCompraItems
 import com.example.dev_shoes.components.ActionButton
+import com.example.dev_shoes.components.ExampleDialog
 import com.example.dev_shoes.components.MainIconButton
 import com.example.dev_shoes.components.TitleBar
 import com.example.dev_shoes.model.dto.listaDeComprasDTO
@@ -48,7 +51,7 @@ import com.example.dev_shoes.model.dto.listaDeComprasDTO
 @Composable
 fun ListaDeCompras(navController: NavController) {
     val itemsList = generateListaDeCompraItems()
-
+    var showDialog by remember { mutableStateOf(false) }
     Scaffold(
         topBar = {
             TopAppBar(
@@ -65,11 +68,17 @@ fun ListaDeCompras(navController: NavController) {
 
             )
         }, floatingActionButton = {
-            ActionButton()
+            ActionButton {
+                showDialog = true
+            }
 
         }
     ) {
         ContentListaDeComprasView(navController, itemsList)
+
+        if (showDialog) {
+            ExampleDialog(onDismiss = { showDialog = false })
+        }
     }
 }
 
@@ -140,11 +149,15 @@ private fun CardContent(item: listaDeComprasDTO) {
 
 
         IconButton(onClick = { expanded = !expanded }) {
-            Icon(imageVector = if(expanded) Icons.Filled.Edit else Icons.Filled.Home , contentDescription = if (expanded) {
-                "show less"
-            } else {
-                "show more"
-            })
+            Icon(
+                imageVector = if (expanded) Icons.Default.KeyboardArrowUp else Icons.Filled.ArrowDropDown,
+                contentDescription =
+                if (expanded) {
+                    "show less"
+                } else {
+                    "show more"
+                }
+            )
         }
 
 
